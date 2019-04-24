@@ -24,7 +24,7 @@
   <dependencies>
     <dependency>
       <groupId>com.chinasofti</groupId>
-      <artifactId>e3-manager-entity</artifactId>
+      <artifactId>e3-manager-dao</artifactId>
       <version>1.0-SNAPSHOT</version>
     </dependency>
   </dependencies>
