@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd
+    http://www.springframework.org/schema/aop
+    http://www.springframework.org/schema/aop/spring-aop.xsd
+    http://www.springframework.org/schema/tx
+    http://www.springframework.org/schema/tx/spring-tx.xsd
+    ">
+	<import resource="classpath:spring-dao.xml"/>
+    <context:component-scan base-package="com.chinasofti">
+    	<!-- 过滤掉对控制层的扫描 -->
+    	<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+    </context:component-scan>
+
+	<!-- 事务对象的配置 -->
+	<bean id="transactionManager" class="org.springframework.orm.hibernate5.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	
+	<!-- 通知  transaction-manager:事务对象管理如下定义的方法-->
+	<tx:advice id="advice" transaction-manager="transactionManager">
+		<tx:attributes>
+			<!-- name:方法名 -->
+			<tx:method name="add*" propagation="REQUIRED"/>
+			<tx:method name="save*" propagation="REQUIRED"/>
+			<tx:method name="update*" propagation="REQUIRED"/>
+			<tx:method name="delete*" propagation="REQUIRED"/>
+			<tx:method name="transf" propagation="REQUIRED"/>
+			<tx:method name="query*" propagation="NEVER"/>
+			<tx:method name="get*" propagation="NEVER"/>
+			<tx:method name="find*" propagation="NEVER"/>
+		</tx:attributes>
+	</tx:advice>
+	
+	<!-- 切点与通知的关联 -->
+	<aop:config>
+		<aop:pointcut expression="execution(* com.chinasofti.service.*.*(..))" id="pc"/>
+		<aop:advisor advice-ref="advice" pointcut-ref="pc"/>	
+	</aop:config>
+	
+
+</beans>
