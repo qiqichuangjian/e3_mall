@@ -8,5 +8,6 @@
 </head>
 <body>
 <h1>hello 宜家商城</h1>
+<a href="/index">后台</a>
 </body>
 </html>

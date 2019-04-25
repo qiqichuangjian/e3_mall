@@ -8,15 +8,15 @@ import java.util.Date;
 
 
 @Entity
-@Table(name="tb_item_desc")
+@Table(name="tb_item_desc")//商品描述表
 public class TbItemDesc implements Serializable {
-    private Long itemId;
+    private Long itemId;//商品ID
 
-    private Date created;
+    private Date created;//创建时间
 
-    private Date updated;
+    private Date updated;//更新时间
 
-    private String itemDesc;
+    private String itemDesc;//商品描述
     @Id
     @GeneratedValue(generator = "_native")
     @GenericGenerator(name = "_native" ,strategy = "native")

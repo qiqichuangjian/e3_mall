@@ -8,29 +8,29 @@ import java.util.Date;
 
 
 @Entity
-@Table(name="tb_user")
+@Table(name="tb_order_shipping")//订单发货表
 public class TbOrderShipping implements Serializable {
-    private String orderId;
+    private String orderId;//订单ID
 
-    private String receiverName;
+    private String receiverName;//收货人全名
 
-    private String receiverPhone;
+    private String receiverPhone;//固定电话
 
-    private String receiverMobile;
+    private String receiverMobile;//移动电话
 
-    private String receiverState;
+    private String receiverState;//省份
 
-    private String receiverCity;
+    private String receiverCity;//城市
 
-    private String receiverDistrict;
+    private String receiverDistrict;//区/县
 
-    private String receiverAddress;
+    private String receiverAddress;//收货地址，如：xx路xx号
 
-    private String receiverZip;
+    private String receiverZip;//邮政编码,如：310001
 
-    private Date created;
+    private Date created;//创建时间
 
-    private Date updated;
+    private Date updated;//更新时间
 
     @Id
     @GeneratedValue(generator = "_native")

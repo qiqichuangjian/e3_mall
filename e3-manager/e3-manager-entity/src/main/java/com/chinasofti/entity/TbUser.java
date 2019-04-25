@@ -10,21 +10,21 @@ import java.io.Serializable;
 import java.util.Date;
 
 @Entity
-@Table(name="tb_user")
+@Table(name="tb_user")//用户表
 public class TbUser implements Serializable {
     private Long id;
 
-    private String username;
+    private String username;//用户名
 
-    private String password;
+    private String password;//密码，加密存储
 
-    private String phone;
+    private String phone;//注册手机号
 
-    private String email;
+    private String email;//注册邮箱
 
-    private Date created;
+    private Date created;//创建时间
 
-    private Date updated;
+    private Date updated;//更新时间
 
     @Id
     @GeneratedValue(generator = "_native")

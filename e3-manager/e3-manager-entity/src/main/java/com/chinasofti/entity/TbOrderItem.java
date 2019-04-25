@@ -7,23 +7,23 @@ import java.io.Serializable;
 
 
 @Entity
-@Table(name="tb_order_item")
+@Table(name="tb_order_item")//
 public class TbOrderItem implements Serializable {
     private String id;
 
-    private String itemId;
+    private String itemId;//商品id
 
-    private String orderId;
+    private String orderId;//订单id
 
-    private Integer num;
+    private Integer num;//商品购买数量
 
-    private String title;
+    private String title;//商品标题
 
-    private Long price;
+    private Long price;//商品单价
 
-    private Long totalFee;
+    private Long totalFee;//商品总金额
 
-    private String picPath;
+    private String picPath;//商品图片地址
     @Id
     @GeneratedValue(generator = "_native")
     @GenericGenerator(name = "_native" ,strategy = "native")

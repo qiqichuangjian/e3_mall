@@ -6,29 +6,29 @@ import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
 @Entity
-@Table(name="tb_item")
+@Table(name="tb_item")//商品表
 public class TbItem implements Serializable {
-    private Long id;
+    private Long id;//商品id，同时也是商品编号
 
-    private String title;
+    private String title;//商品标题
 
-    private String sellPoint;
+    private String sellPoint;//商品卖点
 
-    private Long price;
+    private Long price;//商品价格，单位为：分
 
-    private Integer num;
+    private Integer num;//库存数量
 
-    private String barcode;
+    private String barcode;//商品条形码
 
-    private String image;
+    private String image;//商品图片
 
-    private Long cid;
+    private Long cid;//所属类目，叶子类目
 
-    private Byte status;
+    private Byte status;//商品状态，1-正常，2-下架，3-删除
 
-    private Date created;
+    private Date created;//创建时间
 
-    private Date updated;
+    private Date updated;//更新时间
     @Id
     @GeneratedValue(generator = "_native")
     @GenericGenerator(name = "_native" ,strategy = "native")

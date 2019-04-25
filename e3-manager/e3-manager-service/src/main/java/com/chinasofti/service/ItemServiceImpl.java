@@ -25,6 +25,11 @@ public class ItemServiceImpl implements ItemService {
         return easyUIDataGridResult;
     }
 
-
+    @Override
+    public void save(TbItem tbItem) {
+        itemDao.add(tbItem);
+    }
 }
+
+
 

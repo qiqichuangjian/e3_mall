@@ -111,6 +111,7 @@ var E3 = {
     		}else{
     			_ele.after("<span style='margin-left:10px;'></span>");
     		}
+    		//unbind代表解除之前的单击事件，重新绑定一个单击事件
     		_ele.unbind('click').click(function(){
     			$("<div>").css({padding:"5px"}).html("<ul>")
     			.window({
@@ -127,7 +128,7 @@ var E3 = {
     			    		animate:true,
     			    		onClick : function(node){
     			    			if($(this).tree("isLeaf",node.target)){
-    			    				// 填写到cid中
+    			    				// 填写到cid中，cid所属类目，叶子类目
     			    				_ele.parent().find("[name=cid]").val(node.id);
     			    				_ele.next().text(node.text).attr("cid",node.id);
     			    				$(_win).window('close');

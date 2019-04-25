@@ -7,29 +7,29 @@ import java.io.Serializable;
 import java.util.Date;
 
 @Entity
-@Table(name="tb_content")
+@Table(name="tb_content")//内容表
 public class TbContent implements Serializable {
     private Long id;
 
-    private Long categoryId;
+    private Long categoryId;//内容分类id
 
-    private String title;
+    private String title;//内容标题
 
-    private String subTitle;
+    private String subTitle;//子标题
 
-    private String titleDesc;
+    private String titleDesc;//标题描述
 
-    private String url;
+    private String url;//链接
 
-    private String pic;
+    private String pic;//图片绝对地址
 
-    private String pic2;
+    private String pic2;//图片2
 
-    private Date created;
+    private Date created;//创建时间
 
-    private Date updated;
+    private Date updated;//更改时间
 
-    private String content;
+    private String content;//内容
 
     @Id
     @GeneratedValue(generator = "_native")

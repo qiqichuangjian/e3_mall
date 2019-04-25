@@ -27,5 +27,10 @@
             <artifactId>e3-common</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
+        <dependency>
+            <groupId>com.chinasofti</groupId>
+            <artifactId>e3-manager-entity</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
     </dependencies>
 </project>

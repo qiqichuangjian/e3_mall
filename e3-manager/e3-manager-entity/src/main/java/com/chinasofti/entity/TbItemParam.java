@@ -8,17 +8,17 @@ import java.util.Date;
 
 
 @Entity
-@Table(name="tb_item_param")
+@Table(name="tb_item_param")//商品规则参数
 public class TbItemParam implements Serializable {
     private Long id;
 
-    private Long itemCatId;
+    private Long itemCatId;//商品类目ID
 
-    private Date created;
+    private Date created;//创建时间
 
-    private Date updated;
+    private Date updated;//更新时间
 
-    private String paramData;
+    private String paramData;//参数数据，格式为json格式
 
     @Id
     @GeneratedValue(generator = "_native")

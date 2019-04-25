@@ -8,23 +8,23 @@ import java.util.Date;
 
 
 @Entity
-@Table(name="tb_item_cat")
+@Table(name="tb_item_cat")//商品类目表
 public class TbItemCat implements Serializable {
-    private Long id;
+    private Long id;//类目ID
 
-    private Long parentId;
+    private Long parentId;//父类目ID=0时，代表的是一级的类目
 
-    private String name;
+    private String name;//类目名称
 
-    private Integer status;
+    private Integer status;//状态。可选值:1(正常),2(删除)
 
-    private Integer sortOrder;
+    private Integer sortOrder;//排列序号，表示同级类目的展现次序，如数值相等则按名称次序排列。取值范围:大于零的整数
 
-    private Boolean isParent;
+    private Boolean isParent;//该类目是否为父类目，1为true，0为false
 
-    private Date created;
+    private Date created;//创建时间
 
-    private Date updated;
+    private Date updated;//更新时间
 
 
     @Id
